@@ -19,8 +19,8 @@ public class SnackBar extends JFrame
     Color brandColor3 = new Color(90, 180, 0);
 
     // Load the coin icon for the vending machine buttons:
-    ImageIcon coin = new ImageIcon("coin.gif");
-
+//    ImageIcon coin = new ImageIcon("coin.gif");
+    ImageIcon coin = new ImageIcon("C:\\Users\\student\\IdeaProjects\\SnackBar\\out\\production\\SnackBar\\com\\company\\coin.gif");
     machine1 = new VendingMachine("Java", brandColor1, 45, coin);
     machine2 = new VendingMachine("JApple", brandColor2, 50, coin);
     machine3 = new VendingMachine("Jinx", brandColor3, 35, coin);
