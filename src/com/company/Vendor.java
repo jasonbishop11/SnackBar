@@ -7,8 +7,8 @@ package com.company;
 public class Vendor
 {
   // Fields:
-  private int price, stock;
-  private int currMoney = 0;
+  private int price, stock, currMoney;
+  private static double sales;
 
   /**
    * Constructs a Vendor
@@ -19,8 +19,8 @@ public class Vendor
   {
     price = p;
     stock = s;
+    currMoney = 0;
   }
-
   /**
    * Sets the quantity of items in stock.
    * @param qty number of items to place in stock (int)
@@ -29,7 +29,6 @@ public class Vendor
   {
     stock = qty;
   }
-
   /**
    * Returns the number of items currently in stock.
    * @return number of items currently in stock (int)
@@ -38,7 +37,6 @@ public class Vendor
   {
     return stock;
   }
-
   /**
    * Adds a specified amount (in cents) to the
    * deposited amount.
@@ -48,7 +46,6 @@ public class Vendor
   {
     currMoney+=number;
   }
-
   /**
    * Returns the currently deposited amount (in cents).
    * @return number of cents in the current deposit (int)
@@ -57,7 +54,6 @@ public class Vendor
   {
     return currMoney;
   }
-
   /**
    * Implements a sale.  If there are items in stock and
    * the deposited amount is greater than or equal to
@@ -71,11 +67,11 @@ public class Vendor
   {
     if(currMoney >= price && stock != 0){
       currMoney-=price;
+      sales+=price;
       stock--;
       return true;
     }else{return false;}
   }
-
   /**
    * Returns and zeroes out the amount of change (from
    * the last sale or refund).
@@ -86,5 +82,10 @@ public class Vendor
     int currChange = currMoney;
     currMoney = 0;
     return currChange;
+  }
+
+  public static double getTotalSales()
+  {
+     return sales/100;
   }
 }

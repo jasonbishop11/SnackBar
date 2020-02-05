@@ -19,7 +19,6 @@ public class SnackBar extends JFrame
     Color brandColor3 = new Color(90, 180, 0);
 
     // Load the coin icon for the vending machine buttons:
-//    ImageIcon coin = new ImageIcon("coin.gif");
     ImageIcon coin = new ImageIcon("C:\\Users\\student\\IdeaProjects\\SnackBar\\out\\production\\SnackBar\\com\\company\\coin.gif");
     machine1 = new VendingMachine("Java", brandColor1, 45, coin);
     machine2 = new VendingMachine("JApple", brandColor2, 50, coin);
@@ -56,12 +55,12 @@ public class SnackBar extends JFrame
     password.setText("");
     if (MY_PASSWORD.equals(word))
     {
-      // double amt = Vendor.getTotalSales();
+      double amt = Vendor.getTotalSales();
       machine1.reload();
       machine2.reload();
       machine3.reload();
       JOptionPane.showMessageDialog(null,
-        // String.format("Total sales: $%.2f\n", amt) + 
+        String.format("Total sales: $%.2f\n", amt) +
         "Machines reloaded",
         "Service", JOptionPane.INFORMATION_MESSAGE);
     }
